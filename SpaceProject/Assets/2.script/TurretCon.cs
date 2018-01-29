@@ -1,6 +1,12 @@
-﻿using System.Collections;
+﻿
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+
+
+
 
 public class TurretCon : MonoBehaviour {
     public Transform turretz;
@@ -9,6 +15,7 @@ public class TurretCon : MonoBehaviour {
     public Transform shotpoint;
     // Use this for initialization
     Camera ca;
+
 	void Start () {
         ca = Camera.main;
 	}

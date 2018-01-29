@@ -22,10 +22,10 @@ public class TurretCon : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        
+        turrety.transform.localRotation = Quaternion.Euler(new Vector3(0, ca.transform.localRotation.eulerAngles.y, 0));
 
-        turrety.transform.rotation = Quaternion.Euler(new Vector3(turrety.rotation.x, ca.transform.rotation.eulerAngles.y+90, turrety.rotation.z));
-
-         turretz.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, ca.transform.rotation.eulerAngles.x));
+         turretz.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, ca.transform.localRotation.eulerAngles.x));
 
         
         if (GvrController.HomeButtonDown)

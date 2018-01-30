@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class bullet : MonoBehaviour {
     public float movespeed = 4f;
+    public float damf;
 	// Use this for initialization
 	void Start () {
         
@@ -16,5 +17,13 @@ public class bullet : MonoBehaviour {
     public void bulletshot(Vector3 forwardVec)
     {
         gameObject.GetComponent<Rigidbody>().velocity =forwardVec* movespeed * Time.deltaTime;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        Planet target = other.transform.GetComponent<Planet>();
+        if (target != null)
+        {
+            target.damage(damf);
+        }
     }
 }

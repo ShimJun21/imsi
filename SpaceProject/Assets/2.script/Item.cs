@@ -20,6 +20,11 @@ public class Item : MonoBehaviour {
     {
         gameObject.SetActive(true);//아이템 활성화 부분
     }
+    public void disableItem()
+    {
+        gameObject.SetActive(false);//아이템 비활성화
+
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))//플레이어와 부딛혔을경우 무기 업그레이드 해줍니다.

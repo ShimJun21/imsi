@@ -9,6 +9,7 @@ public class SpaceShipCon : MonoBehaviour {
     /// </summary>
     public float TurretUp;
     public float rotate = 20;
+    public int playerhp=100;
     // Use this for initialization
     void Start () {
         
@@ -106,6 +107,9 @@ public class SpaceShipCon : MonoBehaviour {
             this.transform.Rotate(Vector3.forward * rotate * zup * Time.deltaTime);
         }
     }
-
+    public void playerDamage(int damage)//player에게 damage를 줍니다.
+    {
+        playerhp -= damage;
+    }
 }
 

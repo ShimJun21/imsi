@@ -39,7 +39,7 @@ public class TurretCon : MonoBehaviour {
         //플레이어의 이동에 따라 카메라의 방향이 world좌표로할시 변하기 때문에 터렛이 이상하게 움직임으로 이동과 관련없게 하기위해 local의 회전을 받아서 움직인다.
         turrety.transform.localRotation = Quaternion.Euler(new Vector3(0, ca.transform.localRotation.eulerAngles.y, 0));
 
-
+        
          turretz.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, ca.transform.localRotation.eulerAngles.x));
 
 

@@ -5,11 +5,13 @@ using UnityEngine;
 /// 소행성에 관한 스크립트입니다. 소행성이 플레이어와 멀어지면 랜덤배치와
 /// 행성의 체력 등등
 /// 소행성 오브젝트에 추가해주면 됩니다.
+/// explosive 폭파 오브젝트 추가
 /// </summary>
 public class Planet : MonoBehaviour {
     public float hp=50;
     public Item ite;
     public Transform Player;
+    public GameObject explosive;
 	// Use this for initialization
 	void Start () {
 		
@@ -19,15 +21,7 @@ public class Planet : MonoBehaviour {
 	void Update () {
 		if(Vector3.Distance(Player.position,this.transform.position) > 10)//일정거리 이상 벌어지면 소행성을 다시 배치합니다.
         {
-            float[] randomnum = new float[3];
-            for (int m = 0; m < randomnum.Length; m++)//x,y,z를 랜덤한 방향으로 조금식 움직입니다.
-            {
-                randomnum[m] = Random.Range(-5, 5);
-            }
-
-
-            transform.position = new Vector3(randomnum[0], randomnum[1], randomnum[2])+ Player.position;
-            // this.transform.position +=  Player.position - Player.GetComponent<Rigidbody>().velocity;//
+            moveRandom();
              
         }
 	}
@@ -37,10 +31,11 @@ public class Planet : MonoBehaviour {
         if(hp <= 0)//행성의 체력이 0보다 작아지면
         {
             Debug.Log("아이템생성");
-           
+            Instantiate(explosive,transform);
             ite.showitem();//행성이 가지고 있는 아이템을 활성화 합니다.
             this.gameObject.GetComponent<Renderer>().enabled = false;//행성을 보여주는 render와 collider를 끕니다.
             this.gameObject.GetComponent<MeshCollider>().enabled = false;
+            StartCoroutine(respwanPl());//행성재생성
  
         }
     }
@@ -53,9 +48,32 @@ public class Planet : MonoBehaviour {
         }
         if(coll.gameObject.GetComponent<SpaceShipCon>() != null)//소행성과 player충돌 구현부분
         {
-
+            coll.gameObject.GetComponent<SpaceShipCon>().playerDamage(5);
         }
     }
+    public IEnumerator respwanPl()//소행성이 파괴된후 10초후 다시 생성
+    {
+        yield return new WaitForSeconds(10f);
+        moveRandom();
+        hp = 50;
+        ite.disableItem();
+        this.gameObject.GetComponent<Renderer>().enabled = true;//행성을 보여주는 render와 collider를 끕니다.
+        this.gameObject.GetComponent<MeshCollider>().enabled = true;
+        yield return null;
+    }
+    public void moveRandom()
+    {
+       
+            float[] randomnum = new float[3];
+            for (int m = 0; m < randomnum.Length; m++)//x,y,z를 랜덤한 방향으로 조금식 움직입니다.
+            {
+                randomnum[m] = Random.Range(-5, 5);
+            }
 
 
+            transform.position = new Vector3(randomnum[0], randomnum[1], randomnum[2]) + Player.position;
+            // this.transform.position +=  Player.position - Player.GetComponent<Rigidbody>().velocity;//
+
+        }
+    
 }

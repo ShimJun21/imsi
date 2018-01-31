@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpaceShipCon : MonoBehaviour {
     /// <summary>
     /// 우주선의 움직임을 컨틀롤 해줄 함수
+    /// 움직일 플레이어 오브젝트에 추가해 줍니다.
     /// </summary>
     public float TurretUp;
     public float rotate = 20;
@@ -14,10 +15,10 @@ public class SpaceShipCon : MonoBehaviour {
     }
     public Vector3 controllermove;
     //public Vector3 controllerv;
-    public Vector3 imsi;
+
     // Update is called once per frame
     void Update () {
-        imsi = gameObject.GetComponent<Rigidbody>().velocity;
+      
         //if (GvrController.AppButton)//버튼이 부족하여 삭제
         //{
         //    if (gameObject.GetComponent<Rigidbody>().velocity != Vector3.zero)

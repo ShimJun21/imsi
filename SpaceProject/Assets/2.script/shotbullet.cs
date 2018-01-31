@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 //레이캐스트로 총알을발사해줄 법위
+/// <summary>
+/// 레이캐스트 실험을 위해 만든 스크립트 실제 프로젝트에서 안쓰입니다.
+/// 
+/// </summary>
 public class shotbullet : MonoBehaviour {
     public float damf = 10f;//총알 데미지
     public float range = 100f;//레이캐스트 발사 범위

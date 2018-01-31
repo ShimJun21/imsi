@@ -1,7 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// 소행성에 관한 스크립트입니다. 소행성이 플레이어와 멀어지면 랜덤배치와
+/// 행성의 체력 등등
+/// 소행성 오브젝트에 추가해주면 됩니다.
+/// </summary>
 public class Planet : MonoBehaviour {
     public float hp=50;
     public Item ite;

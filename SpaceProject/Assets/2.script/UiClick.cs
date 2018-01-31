@@ -8,6 +8,10 @@ public class UiClick : MonoBehaviour {
     // event trigger를 활용하여 trigger가 진입후 home버튼을 누르면 발동(ui부분에 event trigger 넣어야댐)
     //구현해야 하는 부분 tirrger enter될수 진입 ui에따라 delgete 함수 지정해주는 enter와 exit함수
     //일어날 함수 부분
+    /// <summary>
+    /// UI에 넣어주어야할 스크립트입니다. Image나 text에 UI에 넣어 보는 범위가 지정될것같습니다.(카메라에gvrpointerphysicㄴRaycaster와 상호작용)
+    /// GameMgr은 gameManager오브젝트를 넣어주어야 합니다.
+    /// </summary>
 
     public delegate void del();
     public del uievent;

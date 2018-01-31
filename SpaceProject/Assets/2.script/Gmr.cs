@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
 /// 전체 적인 게임 매니저를 위한 클래스 입니다.
+/// 게임 매니저 오브젝트에 스크립트를 추가해주면 됩니다.
+/// hierarchy뷰에서 planeTr과 player를 지정해주어야합니다.
 /// </summary>
 public class Gmr : MonoBehaviour {
     public Transform player;

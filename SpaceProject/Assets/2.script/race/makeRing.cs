@@ -4,7 +4,17 @@ using UnityEngine;
 using UnityEngine.UI;
 
 using System.Diagnostics;//stopwatch를 활용하기 위해 지정해줘야 한다. 만약 debug를 사용하려면 using debug = UnityEngine.Debug;를 써주어야한다.
-
+/// <summary>
+/// GameManager오브젝트에 추가해주어야 할 스크립트입니다.
+/// start에는 링이 만들어질 시작위치
+/// end에는 링이 끝날 위치
+/// Ring에는 ring 프리펩
+/// startpoint는 링을 가지고있는 부모오브젝트
+/// player는 player오브젝트
+/// pointtext는 레이스 포인트 ui text
+/// timetext 는 스탑워치 시간의 ui text
+/// 를 hierarchy view에서 지정해주어야 합니다.
+/// </summary>
 
 
 public class makeRing : MonoBehaviour {

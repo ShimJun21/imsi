@@ -5,6 +5,9 @@ using UnityEngine;
 public class bullet : MonoBehaviour {
     public float movespeed = 4f;
     public float damf;
+    /// <summary>
+    /// 총알이 데미지 주는 스크립트 총알 프리팹에 넣어주면됩니다.
+    /// </summary>
 	// Use this for initialization
 	void Start () {
         

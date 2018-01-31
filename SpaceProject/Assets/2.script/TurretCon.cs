@@ -11,6 +11,11 @@ using UnityEngine;
 public class TurretCon : MonoBehaviour {
     /// <summary>
     /// 터렛의 움직임과 터렛의 발사체를 위한함수
+    /// 터렛 오브젝트에 넣어주고
+    /// 터렛의 y축과 z축을 움직일 때 자연스러운 방향이 나오게 turrety,turretz에 hierachy뷰에 서 움직일 부분을 정해줍니다.
+    /// Bulletpre총알 프리펩을 지정해주어야합니다.
+    /// shotpoint 터렛의 앞방향으로 빈 오브젝트를 배치후 hierarchy뷰에서 배치해줍니다.
+    /// shoyLi총알이 나가는 이펙트를 라이트로 했습니다. 다른것으로 해도 됩니다.hierarchy뷰에서 라이트 오브젝트넣어줍시다.
     /// </summary>
 
     public Transform turretz;//터렛의 z축회전 

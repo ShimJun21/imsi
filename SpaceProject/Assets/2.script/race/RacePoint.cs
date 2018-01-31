@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class RacePoint : MonoBehaviour {
     /// <summary>
-    /// 링들이 trigger와 닿았을때 점수 상승을 위해
+    /// 링들이 trigger와 닿았을때 점수 상승을 위해 Ring프리펩에 스크립트를 추가해야합니다.
     /// </summary>
     public makeRing Gmr;
 	// Use this for initialization
